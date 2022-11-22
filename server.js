@@ -10,7 +10,7 @@ if(args.port){ port = args.port; }
 const app = express();
 
 app.get('/app/', (req, res) => {
-    res.status(200).send("OK");
+    res.status(200).send("200 OK");
 })
 
 app.get('/app/roll/', (req, res) => {
@@ -50,7 +50,7 @@ app.get('/app/roll/:sides/:dice/:rolls', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.status(404).send("NOT FOUND");
+    res.status(404).send("404 NOT FOUND");
 })
 
 app.listen(port, () => {
