@@ -9,7 +9,7 @@ if(args.port){ port = args.port; }
 
 const app = express();
 
-app.post('/app/', (req, res) => {
+app.get('/app/', (req, res) => {
     res.status(200).send("200 OK");
 })
 
