@@ -9,11 +9,11 @@ if(args.port){ port = args.port; }
 
 const app = express();
 
-app.get('/app/', (req, res) => {
+app.post('/app/', (req, res) => {
     res.status(200).send("200 OK");
 })
 
-app.post('/app/roll/', (req, res) => {
+app.get('/app/roll/', (req, res) => {
     var sides = 6;
     var dice = 2;
     var rolls = 1;
