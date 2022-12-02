@@ -13,13 +13,13 @@ app.get('/app/', (req, res) => {
     res.status(200).send("200 OK");
 })
 
-app.get('/app/roll/', (req, res) => {
+app.post('/app/roll/', (req, res) => {
     var sides = 6;
     var dice = 2;
     var rolls = 1;
-    if(req.params.sides){ sides = req.params.sides; }
-    if(req.params.dice){ dice = req.params.dice; }
-    if(req.params.rolls){ rolls = req.params.rolls; }
+    if(req.body.sides){ sides = req.body.sides; }
+    if(req.body.dice){ dice = req.body.dice; }
+    if(req.body.rolls){ rolls = req.body.rolls; }
     res.status(200).send(roll(sides, dice, rolls));
 })
 
