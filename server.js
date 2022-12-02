@@ -17,10 +17,11 @@ app.get('/app/roll/', (req, res) => {
     var sides = 6;
     var dice = 2;
     var rolls = 1;
-    if(req.params.sides){ sides = req.params.sides; }
-    if(req.params.dice){ dice = req.params.dice; }
-    if(req.params.rolls){ rolls = req.params.rolls; }
-    res.status(200).send(roll(sides, dice, rolls));
+    res.status(200).send(roll(6, 2, 1));
+})
+
+app.post('/app/roll', (req, res) => {
+    res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls))); 
 })
 
 app.get('/app/roll/:sides', (req, res) => {
